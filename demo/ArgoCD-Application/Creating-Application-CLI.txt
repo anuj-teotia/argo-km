@@ -1,0 +1,1 @@
+argocd app create km-app --repo https://github.com/anuj-teotia/argo-km.git --path manifest --dest-namespace default --dest-server https://kubernetes.default.svc --directory-recurse
