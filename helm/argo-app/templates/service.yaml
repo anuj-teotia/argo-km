@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: argo-km
+spec:
+  selector:
+    app: argo-km
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
