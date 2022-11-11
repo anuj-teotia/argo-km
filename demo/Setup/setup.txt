@@ -8,14 +8,13 @@ kubectl get po -n argocd
 
 ###Get Password
 
-kubectl get secret -n argocd
 kubectl get secret -n argocd -o yaml
 echo 'Base64Encode.password' | base64 -d && echo ''
 
 
 ###accessing the argocd server
 
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+nohup kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 
 
 
