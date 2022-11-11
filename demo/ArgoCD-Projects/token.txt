@@ -1,0 +1,13 @@
+### Generate argo proj token
+
+argocd proj role create-token  project-role-based ci-role 
+
+### sync app with token. it should successed
+
+argocd app sync project-role --auth-token "token"
+
+
+### Now try to delete and it should fail
+
+argocd app delete project-role --auth-token "token"
+

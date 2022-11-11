@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: project-role
+  namespace: argocd
+spec:
+  project: project-role-based
+  destination:
+    namespace: default
+    server: "https://kubernetes.default.svc"
+  source:
+    path: manifest
+    repoURL: "https://github.com/anuj-teotia/argo-km.git"
+    targetRevision: HEAD

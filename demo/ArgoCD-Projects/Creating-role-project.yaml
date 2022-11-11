@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project1
+  name: project-role-based
   namespace: argocd
 spec:
-  description: Basic Project
+  description: Role based project
   sourceRepos:
   - '*'
   destinations:
@@ -20,6 +20,7 @@ spec:
   - name: ci-role
     description: Sync privileges
     policies:
-    - p, proj:project1:ci-role, applications, sync, project1/*, allow
+    - p, proj:project-role-based:ci-role, applications, sync, project-role-based/*, allow
+    - p, proj:project-role-based:ci-role, applications, get, project-role-based/*, allow
 
 
