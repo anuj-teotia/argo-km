@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+  name: argo-km
+spec:
+  selector:
+    app: argo-km
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
