@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
   name: argo-km
   labels:
     app: argo-km

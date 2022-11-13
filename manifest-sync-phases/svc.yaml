@@ -1,8 +1,6 @@
 kind: Service
 apiVersion: v1
 metadata:
-  annotations:
-    argocd.argoproj.io/hook: Sync
   name: argo-km
 spec:
   selector:
