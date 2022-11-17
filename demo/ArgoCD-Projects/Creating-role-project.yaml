@@ -15,5 +15,6 @@ spec:
     description: Sync privileges
     policies:
     - p, proj:project-role-based:ci-role, applications, sync, project-role-based/*, allow
+    - p, proj:project-role-based:ci-role, applications, get, project-role-based/*, allow
 
 
