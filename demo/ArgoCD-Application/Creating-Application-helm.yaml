@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: km-app-heml
+  name: km-app-helm
   namespace: argocd
 spec:
   project: default
