@@ -10,12 +10,6 @@ spec:
   destinations:
   - namespace: '*'
     server: '*'
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
   roles:
   - name: ci-role
     description: Sync privileges

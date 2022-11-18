@@ -10,10 +10,4 @@ spec:
   destinations:
   - namespace: 'ns-1'
     server: '*'
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
 
