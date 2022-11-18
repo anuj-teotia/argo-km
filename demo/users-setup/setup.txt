@@ -1,0 +1,43 @@
+###list the accounts
+
+argocd account list
+
+
+###Get argo config map
+
+kubectl get configmap argocd-cm -n argocd -o yaml > argocd-cm.yml
+
+
+###Add following in configmap to add user
+data:
+  accounts.<username>: apiKey, login
+
+### apply config
+kubectl apply -f argocd-cm.yml
+
+
+### List the account
+
+argocd account list
+
+
+###Update password
+
+argocd account update-password --account <username> --new-password <new password>
+
+
+### Give permission to user
+
+kubectl get configmap argocd-rbac-cm -n argocd -o yaml > argocd-rbac.yml
+
+### Add following in RBAC configmap
+
+data:
+  policy.csv: |
+    p, role:devops, applications, *, *, allow
+    g, <username>, role:devops
+
+
+### Apply config
+
+kubectl apply -f argocd-rbac.yml
